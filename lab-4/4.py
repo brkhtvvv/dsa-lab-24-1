@@ -37,7 +37,6 @@ class ConvertCurrency(StatesGroup):
 @dp.message(Command("start"))
 async def start_bot(message: Message):
     await message.answer("Привет! Выберите действие:", reply_markup=main_menu)
-    await message.answer(f"d: {message.chat.id}")
 
 @dp.message(lambda msg: msg.text == "Сохранить курс")
 async def handle_save_start(message: Message, state: FSMContext):
